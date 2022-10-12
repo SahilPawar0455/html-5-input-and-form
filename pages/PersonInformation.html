@@ -65,7 +65,17 @@
     emailError.textContent = "";
     else textError.textContent = "Email is incorrect";
   });
-
+  const tel = document.querySelector('#tel');
+  const telError = document.querySelector('.tel-error');
+  tel.addEventListener('input',function(){
+    let telRegex = RegExp('[987]{1}[0-9]{9}');
+    if (telRegex.test(tel.value)) {
+        telError.textContent = "";
+    }else{
+        telError.textContent = "tel is incorrect";
+    }
+  }
+  );
 
   const salary = document.querySelector('#salary');
   const output = document.querySelector('.salary-output');
